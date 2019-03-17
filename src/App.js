@@ -1,25 +1,35 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from "react";
+import "./App.css";
+import Main from "./components/Main";
+import Secret from "./components/Secret";
+import NotFound from "./components/NotFound";
+import CallBack from "./components/CallBack";
 
 class App extends Component {
   render() {
+    console.log(this.props.auth.auth0);
+    let mainComponent = "";
+    switch (this.props.location) {
+      case "":
+        mainComponent = <Main {...this.props} />;
+        break;
+      case "secret":
+        mainComponent = this.props.auth.isAuthenticated() ? (
+          <Secret {...this.props} />
+        ) : (
+          <NotFound />
+        );
+        break;
+      case "callback":
+        mainComponent = <CallBack />;
+        break;
+      default:
+        mainComponent = <NotFound />;
+    }
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+        {/* <Main /> */}
+        {mainComponent}
       </div>
     );
   }
