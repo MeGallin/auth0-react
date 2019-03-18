@@ -7,7 +7,7 @@ class Secret extends Component {
       <div>
         <p>
           Welcome {this.props.auth.auth0.baseOptions.tenant}, this is your
-          secret area!
+          secret area! This token expire in {this.props.tokenExpire}
         </p>
         <p>
           <a href="/">Return home</a>

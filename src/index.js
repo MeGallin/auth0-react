@@ -14,8 +14,10 @@ window.setSate = changes => {
 };
 
 /* eslint no-restricted-globals: 0 */
+let tokenExpire = auth.getProfile().exp;
 let initialState = {
   name: "Gary",
+  tokenExpire: tokenExpire,
   location: location.pathname.replace(/^\/?|\$/g, ""),
   auth
 };

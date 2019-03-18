@@ -8,8 +8,7 @@ class Main extends Component {
         <h3>Home</h3>
         {this.props.auth.isAuthenticated() && (
           <p>
-            {this.props.auth.auth0.baseOptions.tenant} you are still logged in.{" "}
-            <a href="/secret">secret area</a>{" "}
+            you are still logged in. <a href="/secret">secret area</a>{" "}
           </p>
         )}
 
