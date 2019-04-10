@@ -1,5 +1,5 @@
-import React, { Component } from "react";
-import Auth from "../Auth";
+import React, { Component } from 'react';
+import Auth from '../Auth';
 
 class CallBack extends Component {
   state = {};
@@ -9,7 +9,7 @@ class CallBack extends Component {
     auth.handleAuthentication();
   }
   render() {
-    return <div>Loading...</div>;
+    return <div>Loading...Loading</div>;
   }
 }
 
